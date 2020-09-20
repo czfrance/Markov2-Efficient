@@ -28,8 +28,8 @@ public class MarkovDriver {
 	
 	public static void main(String[] args) {
 			
-		String filename = "data/trump-sou17.txt";
-		//String filename = "data/bush-sou07.txt";
+		//String filename = "data/trump-sou17.txt";
+		String filename = "data/bush-sou07.txt";
 		//String filename = "data/trumptweets2020.txt";
 
 		if (args.length > 0) {
