@@ -28,9 +28,9 @@ public class MarkovDriver {
 	
 	public static void main(String[] args) {
 			
-		//String filename = "data/trump-sou17.txt";
+		String filename = "data/trump-sou17.txt";
 		//String filename = "data/bush-sou07.txt";
-		String filename = "data/trumptweets2020.txt";
+		//String filename = "data/trumptweets2020.txt";
 
 		if (args.length > 0) {
 			filename = args[1];
@@ -40,13 +40,13 @@ public class MarkovDriver {
 		String text = TextSource.textFromFile(f);
 
 		// only one line below should be uncommented
-		MarkovInterface<String> standard = new BaseMarkov();
-		MarkovInterface<String> efficient = new EfficientMarkov();
+		//MarkovInterface<String> standard = new BaseMarkov();
+		//MarkovInterface<String> efficient = new EfficientMarkov();
 		//MarkovInterface<WordGram> wmm = new BaseWordMarkov();
-		//MarkovInterface<WordGram> ewm = new EfficientWordMarkov();
+		MarkovInterface<WordGram> ewm = new EfficientWordMarkov();
 
 		// first parameter is one of the MarkovInterface variables
-		markovGenerate(efficient,text);
+		markovGenerate(ewm,text);
 	}
 
 	private static void printNicely(String random, int screenWidth) {
