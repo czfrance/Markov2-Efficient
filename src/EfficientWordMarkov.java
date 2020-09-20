@@ -36,7 +36,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
             if (! myMap.containsKey(key)){
                 myMap.put(key, new ArrayList<String>());
             }
-            if (pos + myOrder >= myWords.length - 1) {
+            if (pos + myOrder == myWords.length) {
                 myMap.get(key).add(PSEUDO_EOS);
             }
             else {
