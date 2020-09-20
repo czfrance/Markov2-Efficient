@@ -7,11 +7,20 @@ public class EfficientMarkov extends BaseMarkov {
 		this(3);
 	}
 
+	/**
+	 * Constructs EfficientMarkov object with the specified order
+	 * @param order size of this markov generator
+	 */
 	public EfficientMarkov(int order) {
 		super(order);
 		myMap = new HashMap<>();
 	}
 
+	/**
+	 * Creates a map of all possible grams of the specified order (key) and all the letters that
+	 * come after that gram (value)
+	 * @param text the training text from which the map is created
+	 */
 	@Override
 	public void setTraining(String text) {
 		myText = text;
@@ -35,6 +44,11 @@ public class EfficientMarkov extends BaseMarkov {
 		}
 	}
 
+	/**
+	 * Returns an ArrayList of the letters that follow the specified gram
+	 * @param key the gram we are currently on
+	 * @return an ArrayList of all the letters that come after the gram in the training text
+	 */
 	@Override
 	public ArrayList<String> getFollows(String key) {
 		if (! myMap.containsKey(key)) {

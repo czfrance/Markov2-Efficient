@@ -10,11 +10,20 @@ public class EfficientWordMarkov extends BaseWordMarkov {
         this(2);
     }
 
+    /**
+     * Constructs EfficientWordMarkov object with the specified order
+     * @param order size of this markov generator
+     */
     public EfficientWordMarkov(int order) {
         super(order);
         myMap = new HashMap<>();
     }
 
+    /**
+     * Creates a map of all possible word grams of the specified order (key) and all the letters that
+     * come after that word gram (value)
+     * @param text the training text from which the map is created
+     */
     @Override
     public void setTraining(String text) {
         myWords = text.split("\\s+");
@@ -38,6 +47,12 @@ public class EfficientWordMarkov extends BaseWordMarkov {
         }
     }
 
+
+    /**
+     * Returns an ArrayList of the letters that follow the specified gram
+     * @param kGram the gram we are currently on
+     * @return an ArrayList of all the letters that come after the gram in the training text
+     */
     @Override
     public ArrayList<String> getFollows(WordGram kGram) {
         if (! myMap.containsKey(kGram)) {
