@@ -54,6 +54,8 @@ public class EfficientMarkov extends BaseMarkov {
 		if (! myMap.containsKey(key)) {
 			throw new NoSuchElementException(key + " not contained in the map");
 		}
-		return myMap.get(key);
+		ArrayList<String> map = myMap.get(key);
+		Collections.sort(map);
+		return map;
 	}
 }	

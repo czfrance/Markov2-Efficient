@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.NoSuchElementException;
+import java.util.*;
 
 public class EfficientWordMarkov extends BaseWordMarkov {
     private Map<WordGram, ArrayList<String>> myMap;
@@ -58,6 +55,8 @@ public class EfficientWordMarkov extends BaseWordMarkov {
         if (! myMap.containsKey(kGram)) {
             throw new NoSuchElementException(kGram + " not contained in the map");
         }
-        return myMap.get(kGram);
+        ArrayList<String> map = myMap.get(kGram);
+        Collections.sort(map);
+        return map;
     }
 }
