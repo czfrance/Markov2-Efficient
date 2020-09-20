@@ -55,8 +55,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
         if (! myMap.containsKey(kGram)) {
             throw new NoSuchElementException(kGram + " not contained in the map");
         }
-        ArrayList<String> map = myMap.get(kGram);
-        Collections.sort(map);
-        return map;
+
+        return myMap.get(kGram);
     }
 }
