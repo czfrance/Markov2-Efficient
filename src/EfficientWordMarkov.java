@@ -28,7 +28,7 @@ public class EfficientWordMarkov extends BaseWordMarkov {
 
         int pos = 0;  // location where search for key in text starts
 
-        while (pos < myWords.length - myOrder){
+        while (pos + myOrder <= myWords.length){
             WordGram key = new WordGram(myWords, pos, myOrder);
             if (! myMap.containsKey(key)){
                 myMap.put(key, new ArrayList<String>());

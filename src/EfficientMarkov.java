@@ -25,11 +25,13 @@ public class EfficientMarkov extends BaseMarkov {
 	public void setTraining(String text) {
 		myText = text;
 		myMap.clear();
+
 		int pos = 0;  // location where search for key in text starts
 		String key = "";
 
-		while (pos + myOrder < myText.length()) {
+		while (pos + myOrder <= myText.length()) {
 			key = myText.substring(pos, pos + myOrder);
+
 			if (! myMap.containsKey(key)){
 				myMap.put(key, new ArrayList<String>());
 			}
